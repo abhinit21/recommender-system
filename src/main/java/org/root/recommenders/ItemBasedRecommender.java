@@ -22,7 +22,7 @@ public class ItemBasedRecommender {
 
         long start = System.nanoTime();
 
-        DataModel model = new FileDataModel(new File("src/main/java/org/root/data.txt"));
+        DataModel model = new FileDataModel(new File("src/main/java/org/root/data/ratings.csv"));
 
         RecommenderBuilder recommenderBuilder = dataModel -> {
             ItemSimilarity similarity = new CityBlockSimilarity(dataModel);

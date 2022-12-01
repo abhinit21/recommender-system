@@ -28,7 +28,7 @@ public class BooleanPrefModel {
         DataModel model = new GenericBooleanPrefDataModel(
                 GenericBooleanPrefDataModel.toDataMap(
                         new FileDataModel(
-                                new File("src/main/java/org/root/data.txt")
+                                new File("src/main/java/org/root/data/ratings.csv")
                         )
                 )
         );
