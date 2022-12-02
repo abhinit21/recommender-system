@@ -23,14 +23,6 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * ITEM-Based Recommender System on Lens Data
- * <p>
- * TODO : sl4j configurator for debug off
- * TODO : convert all recommenders into a java interface
- * TODO : create a website to view outputs
- */
-
 public class App {
 
     public static void main(String[] args) throws IOException, TasteException {
@@ -42,18 +34,6 @@ public class App {
         System.out.println("User Based Recommender");
 
         System.out.println("Boolean Preference Model Based Recommender");
-
-        // Data Model
-
-        // User Similarity
-
-        // Item Similarity
-
-        // User Neighbourhood
-
-        // Recommender
-
-        // Evaluate
 
     }
 

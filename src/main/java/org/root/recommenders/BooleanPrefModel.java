@@ -48,6 +48,8 @@ public class BooleanPrefModel {
 
         double score = evaluator.evaluate(recommenderBuilder, null, model, 0.5, 0.1);
 
+        System.out.println("RMSE : " + score);
+
         long end = System.nanoTime();
 
         System.out.println("Execution Time : " + (end - start) + " ns");
