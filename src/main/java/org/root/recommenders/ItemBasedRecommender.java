@@ -7,6 +7,8 @@ import org.apache.mahout.cf.taste.impl.eval.RMSRecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.recommender.GenericItemBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.CityBlockSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.EuclideanDistanceSimilarity;
+import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Recommender;
@@ -25,7 +27,7 @@ public class ItemBasedRecommender {
         DataModel model = new FileDataModel(new File("src/main/java/org/root/data/ratings.csv"));
 
         RecommenderBuilder recommenderBuilder = dataModel -> {
-            ItemSimilarity similarity = new CityBlockSimilarity(dataModel);
+            ItemSimilarity similarity = new EuclideanDistanceSimilarity(dataModel);
             return new GenericItemBasedRecommender(dataModel, similarity);
         };
 
@@ -39,6 +41,8 @@ public class ItemBasedRecommender {
         RecommenderEvaluator evaluator = new RMSRecommenderEvaluator();
 
         double score = evaluator.evaluate(recommenderBuilder, null, model, 0.5, 0.1);
+
+        System.out.println("RMSE : " + score);
 
         long end = System.nanoTime();
 
