@@ -1,5 +1,6 @@
 package org.root.recommenders;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
 import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
@@ -21,6 +22,8 @@ import java.util.List;
 public class ItemBasedRecommender {
 
     public static void main(String[] args) throws IOException, TasteException {
+
+        BasicConfigurator.configure();
 
         long start = System.nanoTime();
 
